@@ -22,8 +22,14 @@ def create_app():
     app.permanent_session_lifetime = timedelta(hours=8)
 
     # Allow the React app to call this API and send the session cookie
-    CORS(app, supports_credentials=True, origins=[Config.FRONTEND_URL])
-
+    CORS(
+    app,
+    supports_credentials=True,
+    origins=[
+        "https://job-connect-fsd-project.vercel.app",
+        "https://job-connect-fsd-project-jha2esm1x-kamalkumar17b-3631s-projects.vercel.app"
+    ]
+)
     for bp in (auth_bp, jobs_bp, applications_bp, students_bp, recruiters_bp, admin_bp):
         app.register_blueprint(bp)
 
