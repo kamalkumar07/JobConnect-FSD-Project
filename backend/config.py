@@ -21,5 +21,5 @@ class Config:
     # Session cookie settings (SameSite=Lax works because localhost:3000 and
     # localhost:5000 are the same "site"). Set SESSION_COOKIE_SECURE=True in production (HTTPS).
     SESSION_COOKIE_HTTPONLY = True
-    SESSION_COOKIE_SAMESITE = "Lax"
-    SESSION_COOKIE_SECURE = os.getenv("SESSION_COOKIE_SECURE", "false").lower() == "true"
+    SESSION_COOKIE_SAMESITE = "None"
+    SESSION_COOKIE_SECURE = True
