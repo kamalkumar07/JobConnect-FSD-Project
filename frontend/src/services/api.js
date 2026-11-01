@@ -1,5 +1,7 @@
 // One small wrapper around fetch(). Every service uses it.
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  "https://jobconnect-fsd-project.onrender.com/api";
 
 export async function request(path, { method = "GET", body, formData } = {}) {
   const options = { method, credentials: "include", headers: {} }; // credentials: send the session cookie
